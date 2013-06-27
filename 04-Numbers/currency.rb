@@ -1,3 +1,4 @@
+# You must install money module with gem
 require "money"
 
 puts "Girilen Price Değeri : "
