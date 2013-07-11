@@ -1,0 +1,5 @@
+# Logfile created on 2013-07-11 11:34:09 +0300 by logger.rb/36483
+I, [2013-07-11T11:34:09.436097 #17020]  INFO -- BankAccount (Haydar KULEKCI): Depositing 100
+I, [2013-07-11T11:34:09.436191 #17020]  INFO -- BankAccount (Haydar KULEKCI): Depositing 100
+I, [2013-07-11T11:34:09.436279 #17020]  INFO -- BankAccount (Haydar KULEKCI): Depositing 100
+I, [2013-07-11T11:34:09.436332 #17020]  INFO -- BankAccount (Haydar KULEKCI): Withdrawing 50

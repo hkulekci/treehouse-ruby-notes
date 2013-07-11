@@ -12,6 +12,7 @@ module Formatter
     def display
         self.class.format_attributes.each do |attribute|
             puts "[#{attribute.to_s.upcase}] #{send(attribute)}"
+            # send() method is used to get attribute value dynamically.
         end
     end
 end
