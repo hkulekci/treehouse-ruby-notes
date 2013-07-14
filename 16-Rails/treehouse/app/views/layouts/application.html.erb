@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treehouse</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <a class="brand" href="/">Treebook</a>
+        <ul class="nav">
+            <li><%= link_to "All Statuses", statuses_path %></li>
+            <% if signed_in? %>
+            <li><%= link_to "Sign out (#{current_user.first_name})", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign in", user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <% if notice != nil %>
+    <br><p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert != nil %>
+    <br><p class="alert alert-error"><%= alert %></p>
+    <% end %>
+<%= yield %>
+</div>
+</body>
+</html>
