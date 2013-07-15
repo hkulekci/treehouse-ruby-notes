@@ -29,6 +29,7 @@ class StatusesController < ApplicationController
   # POST /statuses
   # POST /statuses.json
   def create
+    puts status_params
     @status = Status.new(status_params)
 
     respond_to do |format|
@@ -74,6 +75,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:name, :content)
+      params.require(:status).permit(:name, :content, :user_id)
     end
 end

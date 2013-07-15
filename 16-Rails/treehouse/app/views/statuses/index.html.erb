@@ -5,6 +5,9 @@
 <div class="status">
   <p><%= status.content %></p>
   <div class="meta">
+    <% if status.user %>
+    <%= "(written by " + status.user.full_name + ") " %>
+    <% end %>
     <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
     <span class="admin">
       | <%= link_to 'Edit', edit_status_path(status) %> |
