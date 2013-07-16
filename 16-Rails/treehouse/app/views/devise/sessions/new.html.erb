@@ -1,16 +1,22 @@
-<h2>Sign in</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  
-  <%= f.input :email, label:"Email"%>
+<div class="row">
+    <div class="span4">
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well"}) do |f| %>
+      <fieldset>
+        <legend>Sign in</legend>
+      <%= f.input :email, label:"Email"%>
+      <%= f.input :password %>
+      <% if devise_mapping.rememberable? -%>
+        <%= f.input :remember_me, as: :boolean, inline_label: 'Yes, remember me'  %>
+      <% end -%>
 
-  <%= f.input :password %>
+      <div><%= f.button :submit, "Sign in", class: "btn" %></div>
+      </fieldset>
+    <% end %>
 
-  <% if devise_mapping.rememberable? -%>
-    <%= f.input :remember_me, inline_label: 'Yes, remember me'  %>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+    <%= render :partial => "devise/shared/links" %>
+    </div>
+    <div class="span8">
+        <h2>Sign in is easy and secure</h2>
+    </div>
+</div>

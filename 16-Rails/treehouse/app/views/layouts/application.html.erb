@@ -13,6 +13,8 @@
         <a class="brand" href="/">Treebook</a>
         <ul class="nav">
             <li><%= link_to "All Statuses", statuses_path %></li>
+        </ul>
+        <ul class="nav pull-right">
             <% if signed_in? %>
             <li><%= link_to "Sign out (#{current_user.first_name})", destroy_user_session_path, :method => :delete %></li>
             <% else %>
