@@ -8,6 +8,7 @@
   <strong>Content:</strong>
   <%= @status.content %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_status_path(@status) %> |
+<% end %>
 <%= link_to 'Back', statuses_path %>
